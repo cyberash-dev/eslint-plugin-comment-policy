@@ -10,7 +10,7 @@ import { SDD_PROTECTED_PATTERNS } from "./lib/sdd-patterns";
 const configs: Record<string, TSESLint.FlatConfig.Config> = {};
 
 const plugin: TSESLint.FlatConfig.Plugin = {
-	meta: { name: "cyberash", version: "0.1.0" },
+	meta: { name: "cyberash", version: "0.1.1" },
 	rules: {
 		"max-comment-lines": maxCommentLines,
 		"no-comment-narrative": noCommentNarrative,
