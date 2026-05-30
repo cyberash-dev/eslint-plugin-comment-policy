@@ -1,0 +1,71 @@
+{
+	"name": "eslint-plugin-comment-policy",
+	"version": "0.2.0",
+	"description": "ESLint rules enforcing a per-file comment policy: prose-line caps, no change-narrative, no code snippets, no decorative markers, block comments only (JS + TS).",
+	"type": "module",
+	"license": "MIT",
+	"author": "cyberash <mail@cyberash.dev>",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/cyberash-dev/eslint-plugin-comment-policy.git"
+	},
+	"bugs": {
+		"url": "https://github.com/cyberash-dev/eslint-plugin-comment-policy/issues"
+	},
+	"homepage": "https://github.com/cyberash-dev/eslint-plugin-comment-policy#readme",
+	"keywords": [
+		"eslint",
+		"eslint-plugin",
+		"eslintplugin",
+		"comments",
+		"comment-policy",
+		"typescript"
+	],
+	"sideEffects": false,
+	"main": "./dist/index.cjs",
+	"module": "./dist/index.mjs",
+	"types": "./dist/index.d.mts",
+	"exports": {
+		".": {
+			"import": {
+				"types": "./dist/index.d.mts",
+				"default": "./dist/index.mjs"
+			},
+			"require": {
+				"types": "./dist/index.d.cts",
+				"default": "./dist/index.cjs"
+			}
+		}
+	},
+	"files": [
+		"dist",
+		"AGENTS.md"
+	],
+	"scripts": {
+		"build": "tsdown",
+		"test": "tsx tests/run-all.ts",
+		"typecheck": "tsc --noEmit",
+		"lint": "eslint .",
+		"prepublishOnly": "npm run build && npm test"
+	},
+	"peerDependencies": {
+		"eslint": ">=9"
+	},
+	"dependencies": {
+		"@typescript-eslint/types": "8.60.0",
+		"@typescript-eslint/utils": "8.60.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "9.39.4",
+		"@types/node": "22.19.19",
+		"eslint": "9.39.4",
+		"globals": "15.15.0",
+		"tsdown": "0.22.1",
+		"tsx": "4.22.3",
+		"typescript": "5.9.3",
+		"typescript-eslint": "8.60.0"
+	},
+	"engines": {
+		"node": ">=20"
+	}
+}
