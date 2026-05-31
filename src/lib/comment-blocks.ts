@@ -39,7 +39,7 @@ export function makeLineIndex(text: string): LineIndex {
 	};
 }
 
-function onlyWhitespaceNoBlank(between: string): boolean {
+export function onlyWhitespaceNoBlank(between: string): boolean {
 	return /^[ \t]*\r?\n[ \t]*$/.test(between);
 }
 

@@ -15,6 +15,7 @@ export type RuleName =
 	| "max-comment-lines"
 	| "no-comment-narrative"
 	| "no-comment-code-snippet"
+	| "no-consecutive-comments"
 	| "no-decorative-comment"
 	| "no-line-comment";
 

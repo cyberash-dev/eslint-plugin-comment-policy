@@ -1,12 +1,14 @@
 # AGENTS.md — adopting eslint-plugin-comment-policy
 
-Five ESLint 9 (flat-config) rules enforcing a comment policy, namespace
+Six ESLint 9 (flat-config) rules enforcing a comment policy, namespace
 `comment-policy/`:
 
 - `comment-policy/max-comment-lines` — prose-line cap per comment block
   (default `max` 4, `anchoredMax` 3).
 - `comment-policy/no-comment-narrative` — change-narrative / history prose.
 - `comment-policy/no-comment-code-snippet` — code snippet inside a comment.
+- `comment-policy/no-consecutive-comments` — several stand-alone comments in a
+  row (default `max` 1, `types` line+block, `skipBlankLines` true).
 - `comment-policy/no-decorative-comment` — decorative / section markers.
 - `comment-policy/no-line-comment` — `//` forbidden, `/* */` required.
 
@@ -20,7 +22,7 @@ Five ESLint 9 (flat-config) rules enforcing a comment policy, namespace
    export default [commentPolicy.configs.recommended];
    ```
 
-   `recommended` turns **all five rules on at `error`** with defaults.
+   `recommended` turns **all six rules on at `error`** with defaults.
 
 ## Rule behavior an agent must know
 
