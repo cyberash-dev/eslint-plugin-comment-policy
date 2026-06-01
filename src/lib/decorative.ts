@@ -1,7 +1,8 @@
+const DIV = "=*#_~\\-\\u2013\\u2014\\u2500-\\u257F";
 const DECORATIVE = [
-	/^[=*#_-]{3,}$/,
+	new RegExp(`^[${DIV}]{3,}$`),
 	/^#?\s*(?:region|endregion)\b/i,
-	/^[=*#_-]{2,}.*[=*#_-]{2,}$/,
+	new RegExp(`^[${DIV}]{2,}.*[${DIV}]{2,}$`),
 ];
 
 export function isDecorativeLine(content: string): boolean {

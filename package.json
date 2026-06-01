@@ -1,6 +1,6 @@
 {
 	"name": "eslint-plugin-comment-policy",
-	"version": "0.3.0",
+	"version": "0.4.0",
 	"description": "ESLint rules enforcing a per-file comment policy: prose-line caps, no change-narrative, no code snippets, no decorative markers, block comments only (JS + TS).",
 	"type": "module",
 	"license": "MIT",

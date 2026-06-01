@@ -17,7 +17,7 @@ Namespace: `comment-policy/`. Plugin scope (`meta.name`): `cyberash`.
 | `comment-policy/no-comment-narrative` | change-narrative / history prose (`renamed from`, `previously`, `v1.2`, bare ISO dates, …) | no |
 | `comment-policy/no-comment-code-snippet` | a code snippet (usage example) inside a comment | yes (only when the block is entirely code) |
 | `comment-policy/no-consecutive-comments` | several stand-alone comments stacked one after another (more than `max`) | no |
-| `comment-policy/no-decorative-comment` | decorative / section markers (`=====`, `#region`, `===text===`) | yes |
+| `comment-policy/no-decorative-comment` | decorative / section markers, ASCII and Unicode (`=====`, `#region`, `===text===`, `────`, `══ text ══`) | yes |
 | `comment-policy/no-line-comment` | any `//` comment; requires `/* */` | yes (converts and merges runs of `//`) |
 
 A **comment block** is a run of consecutive full-line `//` comments separated
@@ -129,7 +129,9 @@ when its prose contains `*/` (which would terminate the block early).
 ## Notes
 
 - `no-decorative-comment` detects markers by content in both `//` and `/* */`
-  comment forms.
+  comment forms. The divider charset covers ASCII (`= * # _ - ~`) and Unicode
+  box-drawing / dash runs (`─ ━ ═ │ ┃ ║`, en/em-dash), so banners like
+  `/* ── Section ────── */` are caught; a single such glyph inside prose is not.
 - ESLint applies non-overlapping fixes per pass and re-lints, so a block that is
   both a code snippet and a line comment is resolved across passes.
 
